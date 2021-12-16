@@ -22,6 +22,9 @@ public class RacingGameController {
 			racingGame.status();
 			racingGame.decreaseRound();
 		}
+		OutputView.printGameResult();
+		String winners = racingGame.findWinners();
+		OutputView.printWinners(winners);
 	}
 
 	private RacingGame getRacingGame(Cars racingCars, Round round) {

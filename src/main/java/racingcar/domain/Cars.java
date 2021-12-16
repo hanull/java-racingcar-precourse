@@ -67,4 +67,19 @@ public class Cars {
 			car.goForward();
 		}
 	}
+
+	public String findWinners() {
+		int maxPosition = getMaxPosition();
+		return cars.stream()
+			.filter(car -> car.getPosition() == maxPosition)
+			.map(Car::getName)
+			.collect(Collectors.joining(", "));
+	}
+
+	private int getMaxPosition() {
+		return cars.stream()
+			.map(Car::getPosition)
+			.max((o1, o2) -> o1 - o2)
+			.get();
+	}
 }

@@ -25,4 +25,8 @@ public class RacingGame {
 	public void play() {
 		cars.goForward();
 	}
+
+	public String findWinners() {
+		return cars.findWinners();
+	}
 }

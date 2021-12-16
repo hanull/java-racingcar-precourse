@@ -5,6 +5,7 @@ public class OutputView {
 	private static final String INPUT_RACING_CAR_NAME = "경주할 자동차 이름을 입력하세요.(이름은 쉼표(,) 기준으로 구분)";
 	private static final String INPUT_ROUND = "시도할 회수는 몇회인가요?";
 	private static final String INPUT_PLAY_GAME = "실행 결과";
+	private static final String CHECK_WINNERS = "최종 우승자 : ";
 
 	public static void printInputRacingCarName() {
 		System.out.println(INPUT_RACING_CAR_NAME);
@@ -29,5 +30,13 @@ public class OutputView {
 
 	public static void printCarStatus(StringBuilder currentStatus) {
 		System.out.println(currentStatus);
+	}
+
+	public static void printGameResult() {
+		System.out.print(CHECK_WINNERS);
+	}
+
+	public static void printWinners(String winners) {
+		System.out.println(winners);
 	}
 }
