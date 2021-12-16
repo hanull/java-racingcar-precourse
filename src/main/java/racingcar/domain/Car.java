@@ -2,11 +2,16 @@ package racingcar.domain;
 
 import java.util.Objects;
 
+import camp.nextstep.edu.missionutils.Randoms;
+
 public class Car {
 
 	private static final String ERROR_MESSAGE_EMPTY_NAME = "[ERROR] 빈 자동차 이름이 있습니다. 다시 이름을 입력해주세요.";
 	private static final String ERROR_MESSAGE_OVER_LENGTH = "[ERROR] 자동차 이름의 길이는 5자 이하로 작성해주세요.";
 	private static final int MAX_LENGTH = 5;
+	private static final int MAXIMUM_NUMBER = 9;
+	private static final int MINIMUM_NUMBER = 0;
+	private static final int TARGET_NUMBER = 4;
 
 	private final String name;
 	private int position = 0;
@@ -43,6 +48,17 @@ public class Car {
 
 	public int getPosition() {
 		return position;
+	}
+
+	public void goForward() {
+		if (isPossibleToGoForward()) {
+			++position;
+		}
+	}
+
+	private boolean isPossibleToGoForward() {
+		int pickNumber = Randoms.pickNumberInRange(MINIMUM_NUMBER, MAXIMUM_NUMBER);
+		return pickNumber >= TARGET_NUMBER;
 	}
 
 	@Override

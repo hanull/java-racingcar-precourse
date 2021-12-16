@@ -18,6 +18,7 @@ public class RacingGameController {
 		RacingGame racingGame = getRacingGame(racingCars, round);
 		OutputView.printPlayGame();
 		while (racingGame.hasMoreRound()) {
+			racingGame.play();
 			racingGame.status();
 			racingGame.decreaseRound();
 		}

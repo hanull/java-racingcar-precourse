@@ -21,4 +21,8 @@ public class RacingGame {
 	public void decreaseRound() {
 		round.decrease();
 	}
+
+	public void play() {
+		cars.goForward();
+	}
 }

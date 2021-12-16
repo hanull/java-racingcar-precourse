@@ -61,4 +61,10 @@ public class Cars {
 		}
 		return currentPosition.toString();
 	}
+
+	public void goForward() {
+		for (Car car : cars) {
+			car.goForward();
+		}
+	}
 }
