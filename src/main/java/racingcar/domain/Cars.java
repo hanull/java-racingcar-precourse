@@ -1,5 +1,6 @@
 package racingcar.domain;
 
+import java.util.Comparator;
 import java.util.HashSet;
 import java.util.List;
 import java.util.stream.Collectors;
@@ -79,7 +80,7 @@ public class Cars {
 	private int getMaxPosition() {
 		return cars.stream()
 			.map(Car::getPosition)
-			.max((o1, o2) -> o1 - o2)
+			.max(Comparator.comparingInt(o -> o))
 			.get();
 	}
 }
